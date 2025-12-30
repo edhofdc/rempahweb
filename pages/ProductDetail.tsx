@@ -15,64 +15,71 @@ const ProductDetail: React.FC = () => {
 
   if (!product) return null;
 
-  const waLink = `https://wa.me/6281234567890?text=${encodeURIComponent(`Halo, saya ingin memesan: ${product.name}`)}`;
+  const waLink = `https://wa.me/6281234567890?text=${encodeURIComponent(`Halo Rempah Nusantara, saya tertarik memesan: ${product.name}`)}`;
 
   return (
-    <div className="bg-[#FCFAF7] min-h-screen pt-32 pb-20">
-      <div className="max-w-7xl mx-auto px-6">
-        <nav className="flex items-center gap-2 text-[10px] font-extrabold uppercase tracking-widest mb-12 opacity-40">
-          <Link to="/">Home</Link>
-          <span>/</span>
-          <Link to="/produk">Catalog</Link>
-          <span>/</span>
-          <span className="text-[#1B4332]">{product.name}</span>
+    <div style={{paddingTop: '120px', paddingBottom: '8rem'}}>
+      <div className="container">
+        <nav style={{marginBottom: '3rem', fontSize: '0.8rem', fontWeight: 600}} className="fade-up">
+          <Link to="/" style={{color: 'var(--text-muted)', textDecoration: 'none'}}>Beranda</Link> 
+          <span style={{margin: '0 0.5rem', opacity: 0.3}}>/</span> 
+          <Link to="/produk" style={{color: 'var(--text-muted)', textDecoration: 'none'}}>Katalog</Link> 
+          <span style={{margin: '0 0.5rem', opacity: 0.3}}>/</span> 
+          <span style={{color: 'var(--secondary)'}}>{product.name}</span>
         </nav>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-start">
-          <div className="aspect-[4/5] rounded-3xl overflow-hidden bg-white shadow-sm border border-black/[0.03]">
-            <img src={product.image} alt={product.name} className="w-full h-full object-cover" />
+        <div className="detail-grid">
+          <div className="detail-gallery fade-up">
+            <img src={product.image} alt={product.name} />
           </div>
 
-          <div className="flex flex-col h-full justify-center">
-            <span className="inline-block text-[11px] font-black uppercase tracking-[0.2em] text-[#1B4332] mb-4">
-              {product.category} Collection
+          <div className="detail-content fade-up" style={{animationDelay: '0.2s'}}>
+            <span className="hero-tag" style={{margin: 0, padding: '0.4rem 1rem', fontSize: '0.7rem'}}>
+              KATEGORI: {product.category.toUpperCase()}
             </span>
-            <h1 className="text-4xl md:text-6xl font-black font-playfair text-[#2C1810] leading-tight mb-8">
+            <h1 className="serif" style={{fontSize: 'clamp(2.5rem, 4vw, 4rem)', lineHeight: 1.1, margin: '1.5rem 0 2rem'}}>
               {product.name}
             </h1>
-            <p className="text-lg text-[#2C1810]/60 leading-relaxed font-medium mb-12">
+            <p style={{fontSize: '1.1rem', color: 'var(--text-muted)', marginBottom: '3rem', lineHeight: 1.8}}>
               {product.description}
             </p>
 
-            <div className="space-y-8 mb-16">
-              {product.benefits && (
-                <div className="p-8 bg-white rounded-2xl border border-black/5 shadow-sm">
-                  <h3 className="text-[10px] font-black uppercase tracking-widest text-[#1B4332] mb-6">Manfaat Utama</h3>
-                  <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    {product.benefits.map((b, i) => (
-                      <li key={i} className="flex items-center gap-3 text-sm font-bold text-[#2C1810]/70">
-                        <span className="w-1.5 h-1.5 rounded-full bg-[#1B4332]"></span>
-                        {b}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              )}
+            <div style={{background: 'white', borderRadius: 'var(--radius-md)', padding: '2rem', border: '1px solid var(--border-soft)', marginBottom: '3rem', boxShadow: 'var(--shadow-soft)'}}>
+              <h4 className="serif" style={{marginBottom: '1rem', fontSize: '1.25rem', color: 'var(--primary)'}}>💡 Cara Penggunaan</h4>
+              <p style={{fontSize: '0.95rem', color: 'var(--text-main)', opacity: 0.8, lineHeight: 1.7}}>
+                {product.usage || "Dapat ditambahkan langsung pada masakan atau diseduh sebagai minuman kesehatan untuk mendapatkan profil rasa maksimal."}
+              </p>
             </div>
 
-            <div className="pt-8 border-t border-black/5 flex flex-col sm:flex-row gap-4">
-              <a 
-                href={waLink}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex-grow py-5 bg-[#25D366] text-white rounded-full flex items-center justify-center gap-3 text-[11px] font-black uppercase tracking-widest hover:brightness-105 transition-all shadow-xl shadow-green-900/10"
-              >
-                Pesan via WhatsApp
+            {product.benefits && (
+              <div style={{marginBottom: '3rem'}}>
+                <h4 className="serif" style={{marginBottom: '1.5rem', fontSize: '1.25rem'}}>Manfaat Kesehatan</h4>
+                <div style={{display: 'flex', flexWrap: 'wrap', gap: '0.75rem'}}>
+                  {product.benefits.map((b, i) => (
+                    <span key={i} style={{
+                      background: 'rgba(27, 67, 50, 0.05)', 
+                      color: 'var(--success)', 
+                      padding: '0.6rem 1.2rem', 
+                      borderRadius: '12px', 
+                      fontSize: '0.85rem', 
+                      fontWeight: 700,
+                      border: '1px solid rgba(27, 67, 50, 0.1)'
+                    }}>
+                      ✓ {b}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            <div style={{display: 'flex', gap: '1rem', marginTop: '4rem'}}>
+              <a href={waLink} target="_blank" rel="noopener noreferrer" className="btn btn-wa" style={{flex: 1, gap: '0.75rem', borderRadius: '12px'}}>
+                 Hubungi Marketing Untuk Pesanan
               </a>
-              <button className="px-10 py-5 border border-black/10 rounded-full text-[11px] font-black uppercase tracking-widest hover:bg-black hover:text-white transition-all">
-                Spesifikasi
-              </button>
             </div>
+            <p style={{marginTop: '1.5rem', fontSize: '0.75rem', color: 'var(--text-muted)', textAlign: 'center'}}>
+              *Tersedia kemasan Retail (100g) dan Grosir (1kg - 25kg) dengan harga kompetitif.
+            </p>
           </div>
         </div>
       </div>
