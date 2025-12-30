@@ -1,5 +1,4 @@
-
-# Rempah Nusantara - Company Profile
+# Birawa Lestari - Company Profile
 
 Website profil perusahaan statis untuk penjualan rempah-rempah.
 

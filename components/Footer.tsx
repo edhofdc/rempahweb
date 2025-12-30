@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Link } from 'react-router-dom';
 
@@ -25,12 +24,12 @@ const Footer: React.FC = () => {
             <Link to="/" className="flex items-center gap-4 group">
               <LogoIcon />
               <div className="flex flex-col leading-none">
-                <span className="font-serif text-2xl font-black tracking-tight text-white uppercase">REMPAH</span>
-                <span className="text-[11px] font-bold tracking-[0.4em] text-brand-accent uppercase -mt-0.5">Nusantara</span>
+                <span className="font-serif text-2xl font-black tracking-tight text-white uppercase">BIRAWA</span>
+                <span className="text-[11px] font-bold tracking-[0.4em] text-brand-accent uppercase -mt-0.5">Lestari</span>
               </div>
             </Link>
             <p className="text-stone-400 text-sm leading-relaxed max-w-sm">
-              Membawa keajaiban rempah Nusantara ke meja makan dunia. Kami berkomitmen pada kualitas murni, keberlanjutan alam, dan kesejahteraan petani lokal melalui rantai pasok yang transparan.
+              Membawa keajaiban rempah Nusantara ke meja makan dunia melalui Birawa Lestari. Kami berkomitmen pada kualitas murni, keberlanjutan alam, dan kesejahteraan petani lokal.
             </p>
             <div className="flex gap-4">
               {['FB', 'IG', 'LI', 'YT'].map(social => (
@@ -69,7 +68,7 @@ const Footer: React.FC = () => {
         {/* Bottom Bar */}
         <div className="pt-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6">
           <p className="text-[10px] text-stone-500 uppercase tracking-widest">
-            &copy; {new Date().getFullYear()} PT Rempah Nusantara Indonesia. All Rights Reserved.
+            &copy; {new Date().getFullYear()} PT Birawa Lestari Indonesia. All Rights Reserved.
           </p>
           <div className="flex gap-8 text-[10px] text-stone-500 uppercase tracking-widest">
             <a href="#" className="hover:text-brand-accent transition-colors">Privacy Policy</a>

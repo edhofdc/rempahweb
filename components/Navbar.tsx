@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 
@@ -53,8 +52,8 @@ const Navbar: React.FC = () => {
           <Link to="/" className="flex items-center gap-3 group">
             <LogoIcon />
             <div className="flex flex-col leading-none">
-              <span className="font-serif text-xl font-black tracking-tight text-brand-primary group-hover:text-brand-secondary transition-colors uppercase">REMPAH</span>
-              <span className="text-[10px] font-bold tracking-[0.3em] text-brand-accent uppercase -mt-0.5">Nusantara</span>
+              <span className="font-serif text-xl font-black tracking-tight text-brand-primary group-hover:text-brand-secondary transition-colors uppercase">BIRAWA</span>
+              <span className="text-[10px] font-bold tracking-[0.3em] text-brand-accent uppercase -mt-0.5">Lestari</span>
             </div>
           </Link>
           
@@ -72,7 +71,7 @@ const Navbar: React.FC = () => {
 
           <div className="flex items-center gap-4">
             <div className="hidden sm:block">
-              <a href="https://wa.me/6281234567890" className="flex items-center gap-2 px-6 py-2.5 bg-brand-primary text-white text-[10px] font-black uppercase tracking-widest rounded transition-all hover:bg-brand-secondary hover:-translate-y-0.5 shadow-sm">
+              <a href="https://wa.me/6281234567890?text=Halo%20Birawa%20Lestari%2C%20saya%20ingin%20bertanya%20mengenai%20produk%20rempah." className="flex items-center gap-2 px-6 py-2.5 bg-brand-primary text-white text-[10px] font-black uppercase tracking-widest rounded transition-all hover:bg-brand-secondary hover:-translate-y-0.5 shadow-sm">
                 <WhatsAppIcon />
                 <span>Kontak Kami</span>
               </a>
@@ -115,7 +114,7 @@ const Navbar: React.FC = () => {
           </div>
           <div className="mt-auto">
             <p className="text-xs text-stone-400 mb-6 leading-relaxed">Kualitas rempah terbaik dari tanah Nusantara untuk dunia.</p>
-            <a href="https://wa.me/6281234567890" className="flex justify-center items-center gap-3 w-full py-5 bg-brand-primary text-white text-xs font-black uppercase tracking-widest rounded-xl transition-all hover:bg-brand-secondary">
+            <a href="https://wa.me/6281234567890?text=Halo%20Birawa%20Lestari%2C%20saya%20ingin%20bertanya%20mengenai%20produk%20rempah." className="flex justify-center items-center gap-3 w-full py-5 bg-brand-primary text-white text-xs font-black uppercase tracking-widest rounded-xl transition-all hover:bg-brand-secondary">
               <WhatsAppIcon />
               <span>WhatsApp Kami</span>
               <span className="text-lg">⟶</span>
