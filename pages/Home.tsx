@@ -1,8 +1,7 @@
-
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { products } from '../data/products';
-import ProductCard from '../components/ProductCard';
+import { products } from '../data/products.ts';
+import ProductCard from '../components/ProductCard.tsx';
 
 const Home: React.FC = () => {
   const featured = products.slice(0, 4);

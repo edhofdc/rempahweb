@@ -1,5 +1,4 @@
-
-import { Product, Category } from '../types';
+import { Product, Category } from '../types.ts';
 
 export const products: Product[] = [
   {
@@ -146,7 +145,7 @@ export const products: Product[] = [
     id: '15',
     name: 'BROTOWALI BUBUK',
     slug: 'brotowali-bubuk',
-    description: 'Ekstrak batang Tinospora crispa. Memiliki profil kepahitan yang stabil dan konsisten.',
+    description: 'Ekstrak batang Tinospora crispa. Memiliki profil kepahitan yang stabil and konsisten.',
     category: Category.BUBUK,
     image: 'https://images.unsplash.com/photo-1585141940984-7501a35f7957?auto=format&fit=crop&q=80&w=800',
     benefits: ['Detoksifikasi hati', 'Mengobati gatal-gatal'],

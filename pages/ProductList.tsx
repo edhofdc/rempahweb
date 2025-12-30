@@ -1,8 +1,7 @@
-
 import React, { useState, useMemo } from 'react';
-import { products } from '../data/products';
-import { Category } from '../types';
-import ProductCard from '../components/ProductCard';
+import { products } from '../data/products.ts';
+import { Category } from '../types.ts';
+import ProductCard from '../components/ProductCard.tsx';
 
 const ProductList: React.FC = () => {
   const [activeCategory, setActiveCategory] = useState<string>('Semua');
